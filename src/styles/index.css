@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lora:ital,wght@0,400;0,600;1,400&family=Merriweather:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@400;500;600&display=swap");
+
+@variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+@theme {
+  --color-bg: var(--bg);
+  --color-fg: var(--fg);
+  --color-green: var(--green);
+  --color-blush: var(--blush);
+  --color-mist: var(--mist);
+  --color-taupe: var(--taupe);
+  --color-card-bg: var(--card-bg);
+  --color-card-border: var(--card-border);
+  --color-muted: var(--muted);
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-scripture: "Lora", Georgia, serif;
+  --font-body: "Merriweather", serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+:root {
+  --bg: #f4f7f4;
+  --fg: #3d5a47;
+  --green: #7aab88;
+  --blush: #c9a0a0;
+  --mist: #b2cec4;
+  --taupe: #7a8c7e;
+  --card-bg: #ffffff;
+  --card-border: #dce8df;
+  --muted: #9eb8a6;
+}
+
+:root[data-theme="dark"] {
+  --bg: #1a2420;
+  --fg: #d0e8d8;
+  --green: #3a5c45;
+  --blush: #7a4040;
+  --mist: #2c3e38;
+  --taupe: #8aaa92;
+  --card-bg: #21302b;
+  --card-border: #324038;
+  --muted: #5a7a65;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  transition: background-color 0.3s, color 0.3s;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Slide transitions for verse navigation */
+.slide-left-enter-active,
+.slide-left-leave-active,
+.slide-right-enter-active,
+.slide-right-leave-active {
+  transition: all 0.25s ease;
+}
+
+.slide-left-enter-from {
+  opacity: 0;
+  transform: translateX(30px);
+}
+.slide-left-leave-to {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.slide-right-enter-from {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+.slide-right-leave-to {
+  opacity: 0;
+  transform: translateX(30px);
+}
