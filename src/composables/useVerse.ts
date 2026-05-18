@@ -31,6 +31,11 @@ export function useVerse() {
     }
   };
 
+  const goToReference = (reference: string) => {
+    const idx = collection.verses.findIndex((v) => v.reference === reference);
+    if (idx !== -1) goToIndex(idx);
+  };
+
   return {
     currentVerse,
     currentIndex,
@@ -41,6 +46,7 @@ export function useVerse() {
     goToPrev,
     goToNext,
     goToIndex,
+    goToReference,
     direction,
     collectionMeta: collection.meta,
   };
