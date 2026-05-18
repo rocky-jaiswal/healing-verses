@@ -30,6 +30,7 @@
   --card-bg: #ffffff;
   --card-border: #dce8df;
   --muted: #9eb8a6;
+  --gradient: linear-gradient(135deg, #fde4e8 0%, #f0f7f2 50%, #ddf0ea 100%);
 }
 
 :root[data-theme="dark"] {
@@ -42,6 +43,7 @@
   --card-bg: #21302b;
   --card-border: #324038;
   --muted: #5a7a65;
+  --gradient: linear-gradient(135deg, #2a1a20 0%, #1a2420 50%, #101e28 100%);
 }
 
 html,
@@ -51,10 +53,11 @@ body,
 }
 
 body {
-  background-color: var(--bg);
+  background: var(--gradient);
+  background-attachment: fixed;
   color: var(--fg);
   font-family: var(--font-sans);
-  transition: background-color 0.3s, color 0.3s;
+  transition: background 0.3s, color 0.3s;
   -webkit-font-smoothing: antialiased;
 }
 
